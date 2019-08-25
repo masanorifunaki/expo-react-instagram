@@ -1,8 +1,7 @@
 const icon = require('app/assets/images/icon.png');
 
 const images = {
-  icon
+  icon,
 };
 
 export default images;
-

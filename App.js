@@ -9,30 +9,33 @@ import images from 'app/src/images';
 import MainTabNavigator from 'app/src/navigation/MainTabNavigator';
 
 const App = () => {
+  // eslint-disable-next-line no-unused-vars
   const [skipLoadingScreen, setSkipLoadingScreen] = useState(false);
-  const [isLoadingComplete, setLoadingComplete]   = useState(false);
+  const [isLoadingComplete, setLoadingComplete] = useState(false);
 
   const loadResourcesAsync = async () => {
     // ローカルフォルダーから画層をロード
     await Asset.loadAsync(Object.keys(images)
-      .map(key => images[key]));
+      .map((key) => images[key]));
     // ローカルフォルダからフォントをロード
     await Font.loadAsync(fonts);
 
     return true;
   };
 
-  if ( !isLoadingComplete && !skipLoadingScreen ) {
+  if (!isLoadingComplete && !skipLoadingScreen) {
     return (
-      <AppLoading startAsync={loadResourcesAsync}
-                  onError={error => console.warn(error)}
-                  onFinish={() => setLoadingComplete(true)}/>
+      <AppLoading
+        startAsync={loadResourcesAsync}
+        onError={(error) => console.warn(error)}
+        onFinish={() => setLoadingComplete(true)}
+      />
     );
   }
 
   return (
     <>
-      <MainTabNavigator/>
+      <MainTabNavigator />
     </>
   );
 };

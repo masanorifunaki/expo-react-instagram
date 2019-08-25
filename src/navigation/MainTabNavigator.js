@@ -13,62 +13,62 @@ import {
   TakeTabIcon,
   NotificationTabIcon,
   MeTabIcon,
-  TabBar
+  TabBar,
 } from 'app/src/components/Tab';
 
 const createTabStack = (title, screen) => createStackNavigator({
-  [title]: { screen }
+  [title]: { screen },
 });
 
 export default createAppContainer(createBottomTabNavigator(
   {
-    HomeTab        : {
-      screen           : createTabStack('HomeTab', HomeScreen),
+    HomeTab: {
+      screen: createTabStack('HomeTab', HomeScreen),
       navigationOptions: () => ({
-        tabBarIcon: HomeTabIcon
-      })
+        tabBarIcon: HomeTabIcon,
+      }),
     },
-    SearchTab      : {
-      screen           : createTabStack('SearchTab', SearchScreen),
+    SearchTab: {
+      screen: createTabStack('SearchTab', SearchScreen),
       navigationOptions: () => ({
-        tabBarIcon: SearchTabIcon
-      })
+        tabBarIcon: SearchTabIcon,
+      }),
     },
-    TakeTab        : {
-      screen           : () => null,
+    TakeTab: {
+      screen: () => null,
       navigationOptions: ({ navigation }) => ({
-        tabBarIcon   : TakeTabIcon,
+        tabBarIcon: TakeTabIcon,
         tabBarOnPress: () => {
           navigation.push('TakeModel');
-        }
-      })
+        },
+      }),
     },
     NotificationTab: {
-      screen           : createTabStack('NotificationTab', NotificationScreen),
+      screen: createTabStack('NotificationTab', NotificationScreen),
       navigationOptions: () => ({
-        tabBarIcon: NotificationTabIcon
-      })
+        tabBarIcon: NotificationTabIcon,
+      }),
     },
-    MeTab          : {
-      screen           : createTabStack('MeTab', UserScreen),
+    MeTab: {
+      screen: createTabStack('MeTab', UserScreen),
       navigationOptions: () => ({
-        tabBarIcon: MeTabIcon
-      })
-    }
+        tabBarIcon: MeTabIcon,
+      }),
+    },
   },
   {
     // タブナビゲーション全体に関する設定
-    tabBarOptions   : {
-      showLabel        : false,
-      activeTintColor  : '#333',
+    tabBarOptions: {
+      showLabel: false,
+      activeTintColor: '#333',
       inactiveTintColor: '#bbb',
-      style            : {
-        backgroundColor: Constants.manifest.extra.backgroundColor
-      }
+      style: {
+        backgroundColor: Constants.manifest.extra.backgroundColor,
+      },
     },
-    tabBarComponent : TabBar,
-    tabBarPosition  : 'bottom',
+    tabBarComponent: TabBar,
+    tabBarPosition: 'bottom',
     animationEnabled: false,
-    swipeEnabled    : false
-  }
+    swipeEnabled: false,
+  },
 ));

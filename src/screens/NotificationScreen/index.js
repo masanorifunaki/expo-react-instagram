@@ -1,16 +1,15 @@
-import React          from 'react';
+import React from 'react';
 import { View, Text } from 'react-native';
 
-const NotificationScreen = () => {
-  return (
-    <View style={{
-      flex          : 1,
-      alignItems    : 'center',
-      justifyContent: 'center'
-    }}>
-      <Text>Hello Notification Screen</Text>
-    </View>
-  );
-};
+const NotificationScreen = () => (
+  <View style={{
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+  >
+    <Text>Hello Notification Screen</Text>
+  </View>
+);
 
-export default NotificationScreen
+export default NotificationScreen;
