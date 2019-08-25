@@ -1,12 +1,12 @@
-import React, { useState }        from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { AppLoading }             from 'expo';
-import { Asset }                  from 'expo-asset';
-import * as Font                  from 'expo-font';
+import React, { useState } from 'react';
+import { AppLoading } from 'expo';
+import { Asset } from 'expo-asset';
+import * as Font from 'expo-font';
 
 /* from app */
-import fonts                      from 'app/src/fonts';
-import images                     from 'app/src/images';
+import fonts from 'app/src/fonts';
+import images from 'app/src/images';
+import MainTabNavigator from 'app/src/navigation/MainTabNavigator';
 
 const App = () => {
   const [skipLoadingScreen, setSkipLoadingScreen] = useState(false);
@@ -31,13 +31,9 @@ const App = () => {
   }
 
   return (
-    <View style={{
-      flex          : 1,
-      alignItems    : 'center',
-      justifyContent: 'center'
-    }}>
-      <Text>Hello World</Text>
-    </View>
+    <>
+      <MainTabNavigator/>
+    </>
   );
 };
 
