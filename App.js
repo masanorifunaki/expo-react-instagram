@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createAppContainer } from 'react-navigation';
 import { AppLoading } from 'expo';
 import { Asset } from 'expo-asset';
 import * as Font from 'expo-font';
@@ -6,7 +7,9 @@ import * as Font from 'expo-font';
 /* from app */
 import fonts from 'app/src/fonts';
 import images from 'app/src/images';
-import MainTabNavigator from 'app/src/navigation/MainTabNavigator';
+import AppNavigator from 'app/src/navigation/AppNavigator';
+
+const AppContainer = createAppContainer(AppNavigator);
 
 const App = () => {
   // eslint-disable-next-line no-unused-vars
@@ -34,9 +37,7 @@ const App = () => {
   }
 
   return (
-    <>
-      <MainTabNavigator />
-    </>
+    <AppContainer />
   );
 };
 

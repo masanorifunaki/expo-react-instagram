@@ -1,5 +1,5 @@
 import Constants from 'expo-constants';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 /* from app */
@@ -20,7 +20,7 @@ const createTabStack = (title, screen) => createStackNavigator({
   [title]: { screen },
 });
 
-export default createAppContainer(createBottomTabNavigator(
+export default (createBottomTabNavigator(
   {
     HomeTab: {
       screen: createTabStack('HomeTab', HomeScreen),
