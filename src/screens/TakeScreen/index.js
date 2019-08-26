@@ -1,15 +1,15 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const NotificationScreen = () => (
+const TakeScreen = () => (
   <View style={{
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   }}
   >
-    <Text>Hello Notification Screen</Text>
+    <Text>Hello User Screen</Text>
   </View>
 );
 
-export default NotificationScreen;
+export default TakeScreen;

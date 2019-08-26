@@ -1,16 +1,15 @@
-import React          from 'react';
+import React from 'react';
 import { View, Text } from 'react-native';
 
-const HomeScreen = () => {
-  return (
-    <View style={{
-      flex          : 1,
-      alignItems    : 'center',
-      justifyContent: 'center'
-    }}>
-      <Text>Hello Home Screen</Text>
-    </View>
-  );
-};
+const HomeScreen = () => (
+  <View style={{
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+  >
+    <Text>Hello Home Screen</Text>
+  </View>
+);
 
-export default HomeScreen
+export default HomeScreen;
